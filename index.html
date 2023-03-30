@@ -24,7 +24,7 @@
 
                 <ul class="nav flex-column align-content-center w-75" v-if="shopList.length > 0">
                     <li v-for="(item, index) in shopList" 
-                    class="d-flex justify-content-between w-100  align-items-center" @click="done(index)" 
+                    class="d-flex justify-content-between w-100  align-items-center" @click="item.completed = !item.completed" 
                     :class="item.completed ? 'text-decoration-line-through': ''">
 
                         <span>{{shopList[index].text}}</span>

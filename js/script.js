@@ -30,8 +30,5 @@ createApp({
         remove(i){
             this.shopList.splice(i, 1);
         },
-        done(i){
-            this.shopList[i].completed = true
-        }
     }
 }).mount('#app');
