@@ -5,11 +5,11 @@ createApp({
         return {
             shopList: [
                 {
-                    name: 'pane',
+                    text: 'pane',
                     completed: false
                 },
                 {
-                    name: 'acqua',
+                    text: 'acqua',
                     completed: false
                 }
             ],
@@ -20,14 +20,18 @@ createApp({
         add(){
             if (this.newIngredient != ''){
                 const newItem = {
-                name: this.newIngredient,
-                completed: false
+                    text: this.newIngredient,
+                    completed: false
                 }
                 this.shopList.push(newItem);
+                this.newIngredient = '';
             }
         },  
         remove(i){
             this.shopList.splice(i, 1);
+        },
+        done(i){
+            this.shopList[i].completed = true
         }
     }
 }).mount('#app');

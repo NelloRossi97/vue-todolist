@@ -21,10 +21,15 @@
             </div>
             
             <div class="bg-black rounded-3 p-3 mt-5 d-flex flex-column justify-content-center align-items-center align-content-center w-25">
+
                 <ul class="nav flex-column align-content-center w-75" v-if="shopList.length > 0">
-                    <li v-for="(item, index) in shopList" class="d-flex justify-content-between w-100  align-items-center">
-                        <span>{{shopList[index].name}}</span>
-                        <button class="btn btn-outline-danger" @click="remove(index)"><i class="fa fa-trash"></i></button>
+                    <li v-for="(item, index) in shopList" 
+                    class="d-flex justify-content-between w-100  align-items-center" @click="done(index)" 
+                    :class="item.completed ? 'text-decoration-line-through': ''">
+
+                        <span>{{shopList[index].text}}</span>
+                        <button class="btn btn-outline-danger" @click.stop="remove(index)"><i class="fa fa-trash"></i></button>
+
                     </li>
                 </ul>
                 <h2 v-else>La lista è vuota.</h2>
