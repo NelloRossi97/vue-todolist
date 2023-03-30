@@ -15,7 +15,7 @@
                 <h1 class="text-uppercase mb-2 text-center">Lista della spesa</h1>
                 <div class="d-flex align-items-center">
                     <label for="item">Aggiungi un elemento alla lista</label>
-                    <input class="rounded-4 mx-3" type="text" name="item" id="item" v-model="newIngredient">
+                    <input class="rounded-4 mx-3" type="text" name="item" id="item" v-model="newIngredient" @keyup.enter="add">
                     <button class="btn btn-primary" @click="add"><i class="fa fa-plus"></i></button>
                 </div>  
             </div>

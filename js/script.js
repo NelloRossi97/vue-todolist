@@ -18,11 +18,13 @@ createApp({
     },
     methods: {
         add(){
-            const newItem = {
+            if (this.newIngredient != ''){
+                const newItem = {
                 name: this.newIngredient,
                 completed: false
+                }
+                this.shopList.push(newItem);
             }
-            this.shopList.push(newItem);
         },  
         remove(i){
             this.shopList.splice(i, 1);
