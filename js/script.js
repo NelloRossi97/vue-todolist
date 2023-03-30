@@ -13,10 +13,16 @@ createApp({
                     completed: false
                 }
             ],
-            newItem: ''
+            newIngredient: ''
         }
     },
     methods: {
-                
+        add(){
+            const newItem = {
+                name: this.newIngredient,
+                completed: false
+            }
+            this.shopList.push(newItem);
+        }  
     }
 }).mount('#app');
