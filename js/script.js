@@ -23,6 +23,9 @@ createApp({
                 completed: false
             }
             this.shopList.push(newItem);
-        }  
+        },  
+        remove(i){
+            this.shopList.splice(i, 1);
+        }
     }
 }).mount('#app');
